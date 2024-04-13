@@ -42,10 +42,9 @@
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
     (native-inputs
-     (list ruby-thor
-           ruby-activesupport
+     (list ruby-activesupport
            ruby-rspec))
-    (inputs
+    (propagated-inputs
      (list ruby-thor))
     (synopsis "")
     (description "")
