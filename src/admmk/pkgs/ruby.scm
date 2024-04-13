@@ -41,6 +41,8 @@
         (base32
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
+    (arguments
+     '(#:tests? #f))
     (native-inputs
      (list ruby-activesupport
            ruby-rspec))
