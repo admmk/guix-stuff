@@ -1,6 +1,7 @@
 (define-module (admmk pkgs ruby)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
+  #:use-module (gnu packages ruby)
   #:use-module (guix download)
   #:use-module (guix packages)
   #:use-module (guix build-system ruby))
