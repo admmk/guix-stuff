@@ -43,7 +43,8 @@
     (build-system ruby-build-system)
     (native-inputs
      (list ruby-thor
-           ruby-activesupport))
+           ruby-activesupport
+           ruby-rspec))
     (synopsis "")
     (description "")
     (home-page "")
