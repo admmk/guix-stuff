@@ -17,6 +17,10 @@
         (base32
          "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
     (build-system ruby-build-system)
+    (native-inputs
+     (list ruby-mocha
+           ;; ruby-appraisal
+           ))
     ;; (arguments '(#:tests? #f))
     (synopsis "")
     (description "")
