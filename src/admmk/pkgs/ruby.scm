@@ -15,7 +15,7 @@
        (uri (rubygems-uri "jbuilder" version))
        (sha256
         (base32
-         "01v6jjpvh3gnq6sgllpfqahlgxzj50ailwhj9b3cd20hi2dx0vxp"))))
+         "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
     (build-system ruby-build-system)
     ;; (arguments '(#:tests? #f))
     (synopsis "")
