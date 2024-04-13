@@ -38,7 +38,7 @@
        (uri (rubygems-uri "appraisal" version))
        (sha256
         (base32
-         "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
+         "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
     (native-inputs
      (list ruby-thor))
