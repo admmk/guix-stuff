@@ -45,6 +45,8 @@
      (list ruby-thor
            ruby-activesupport
            ruby-rspec))
+    (inputs
+     (list ruby-thor))
     (synopsis "")
     (description "")
     (home-page "")
