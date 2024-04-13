@@ -22,6 +22,9 @@
     (native-inputs
      (list ruby-mocha
            ruby-appraisal))
+    (propagated-inputs
+     (list ruby-thor
+           ruby-activesupport))
     ;; (arguments '(#:tests? #f))
     (synopsis "")
     (description "")
