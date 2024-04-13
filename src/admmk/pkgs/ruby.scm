@@ -27,3 +27,22 @@
     (description "")
     (home-page "")
     (license license:expat)))
+
+(define-public ruby-appraisal
+  (package
+    (name "ruby-appraisal")
+    (version "2.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (rubygems-uri "appraisal" version))
+       (sha256
+        (base32
+         "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
+    (build-system ruby-build-system)
+    (native-inputs
+     (list ruby-thor))
+    (synopsis "")
+    (description "")
+    (home-page "")
+    (license license:expat)))
