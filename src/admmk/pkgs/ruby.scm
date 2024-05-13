@@ -22,7 +22,8 @@
     (native-inputs
      (list ruby-mocha
            ruby-appraisal
-           ruby-activesupport))
+           ruby-activesupport
+           ruby-actionview))
     ;; (arguments '(#:tests? #f))
     (synopsis "")
     (description "")
