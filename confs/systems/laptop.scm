@@ -2,12 +2,7 @@
 	     (nongnu packages linux)
              (nongnu system linux-initrd)
              ((admmk srvcs) #:prefix admmk:)
-             ((admmk pkgs emacs) #:prefix admmk:)
-
-             ;; for pinning the kernel
-             (srfi srfi-1)
-             (guix channels)
-             (guix inferior))
+             ((admmk pkgs emacs) #:prefix admmk:))
 
 (use-service-modules desktop ssh)
 (use-package-modules bootloaders certs
@@ -49,13 +44,13 @@
 
   (packages (append (list
                      emacs emacs-exwm emacs-desktop-environment
+                     emacs-pdf-tools
                      admmk:emacs-stuff
-                     xterm
-                     nss-certs)
+                     xterm)
                     %base-packages))
 
   (services (append (list (service openssh-service-type)
-                          (service xfce-desktop-service-type))
+                          (service gnome-desktop-service-type))
                     admmk:%desktop-services))
 
   (name-service-switch %mdns-host-lookup-nss))
