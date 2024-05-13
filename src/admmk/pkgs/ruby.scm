@@ -21,7 +21,8 @@
     (build-system ruby-build-system)
     (native-inputs
      (list ruby-mocha
-           ruby-appraisal))
+           ruby-appraisal
+           ruby-activesupport))
     ;; (arguments '(#:tests? #f))
     (synopsis "")
     (description "")
