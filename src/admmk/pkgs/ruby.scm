@@ -70,7 +70,7 @@
               (file-name (git-file-name name version))
               (sha256
                (base32
-                "1k3z2mlhaig5ycapjxwybb19z7ca0q1876i6csfmv2j0hf1hnc0z"))))
+                "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
     ;; (arguments
     ;;  (list
