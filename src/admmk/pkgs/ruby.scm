@@ -55,3 +55,52 @@
     (description "")
     (home-page "")
     (license license:expat)))
+
+(define-public my-ruby-thor
+  (package
+    (name "my-ruby-thor")
+    (version "0.14.6")
+    (source (origin
+              ;; Pull from git because the gem has no tests.
+              (method git-fetch)
+              (uri (git-reference
+                    (url "https://github.com/rails/thor")
+                    (commit (string-append "v" version))))
+              (file-name (git-file-name name version))
+              (sha256
+               (base32
+                "1k3z2mlhaig5ycapjxwybb19z7ca0q1876i6csfmv2j0hf1hnc0z"))))
+    (build-system ruby-build-system)
+    (arguments
+     (list
+      #:phases
+      #~(modify-phases %standard-phases
+          (add-after 'unpack 'remove-coveralls-dependency
+            (lambda _
+              ;; Do not hook the test suite into the online coveralls service.
+              (substitute* "Gemfile"
+                ((".*coveralls.*") ""))
+              (substitute* "spec/helper.rb"
+                (("require \"coveralls\"") "")
+                (("Coveralls::SimpleCov::Formatter") ""))))
+          (add-after 'unpack 'disable-problematic-tests
+            (lambda _
+              ;; These tests attempt to check the git repository for
+              ;; tabs vs spaces, double vs single quotes, etc, and
+              ;; depend on the git checkout.
+              (delete-file "spec/quality_spec.rb")
+              (substitute* "spec/parser/options_spec.rb"
+                ;; This test fails for unknown reasons (see:
+                ;; https://github.com/rails/thor/issues/814).
+                (("it \"raises an error for unknown switches" all)
+                 (string-append "x" all)))))
+          (replace 'check
+            (lambda* (#:key tests? #:allow-other-keys)
+              (when tests?
+                (invoke "rspec" "spec" )))))))
+    (native-inputs (list ruby-rspec ruby-simplecov ruby-webmock))
+    (synopsis "Ruby toolkit for building command-line interfaces")
+    (description "Thor is a toolkit for building powerful command-line
+interfaces.")
+    (home-page "http://whatisthor.com/")
+    (license license:expat)))
