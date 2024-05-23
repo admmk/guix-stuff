@@ -24,7 +24,6 @@
            ruby-appraisal
            ruby-activesupport
            ruby-actionview))
-    ;; (arguments '(#:tests? #f))
     (synopsis "")
     (description "")
     (home-page "")
@@ -43,8 +42,8 @@
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
     ;; todo: fix-tests
-    (arguments
-     '(#:tests? #f))
+    ;; (arguments
+    ;;  '(#:tests? #f))
     (native-inputs
      (list ruby-activesupport
            ruby-rspec))
