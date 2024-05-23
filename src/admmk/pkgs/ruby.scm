@@ -48,8 +48,6 @@
      (list ruby-activesupport
            ruby-rspec
            ruby-thor))
-    (propagated-inputs
-     (list ruby-thor))
     (synopsis "")
     (description "")
     (home-page "")
