@@ -46,7 +46,8 @@
     ;;  '(#:tests? #f))
     (native-inputs
      (list ruby-activesupport
-           ruby-rspec))
+           ruby-rspec
+           ruby-thor))
     (propagated-inputs
      (list ruby-thor))
     (synopsis "")
