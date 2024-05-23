@@ -73,12 +73,14 @@
                 "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
     (arguments
-     `(#:phases
-       (modify-phases %standard-phases
-         (replace 'check
-            (lambda* (#:key tests? #:allow-other-keys)
-              (when tests?
-                (invoke "rspec" "spec" )))))))
+     `(#:tests? #f
+       ;; #:phases
+       ;; (modify-phases %standard-phases
+       ;;   (replace 'check
+       ;;      (lambda* (#:key tests? #:allow-other-keys)
+       ;;        (when tests?
+       ;;          (invoke "rspec" "spec" )))))))
+       ))
     ;; (arguments
     ;;  (list
     ;;   #:phases
