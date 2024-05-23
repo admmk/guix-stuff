@@ -73,9 +73,16 @@
                 "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
     (arguments
-     (list
-      #:phases
-      #~(modify-phases %standard-phases
+     `(#:phases
+       (modify-phases %standard-phases
+         (replace 'check
+            (lambda* (#:key tests? #:allow-other-keys)
+              (when tests?
+                (invoke "rspec" "spec" )))))))
+    ;; (arguments
+    ;;  (list
+    ;;   #:phases
+    ;;   #~(modify-phases %standard-phases
     ;;       (add-after 'unpack 'remove-coveralls-dependency
     ;;         (lambda _
     ;;           ;; Do not hook the test suite into the online coveralls service.
@@ -95,10 +102,10 @@
     ;;             ;; https://github.com/rails/thor/issues/814).
     ;;             (("it \"raises an error for unknown switches" all)
     ;;              (string-append "x" all)))))
-          (replace 'check
-            (lambda* (#:key tests? #:allow-other-keys)
-              (when tests?
-                (invoke "rspec" "spec" )))))))
+          ;; (replace 'check
+          ;;   (lambda* (#:key tests? #:allow-other-keys)
+          ;;     (when tests?
+          ;;       (invoke "rspec" "spec" )))))))
     (native-inputs (list ruby-rspec ruby-simplecov ruby-webmock))
     (synopsis "Ruby toolkit for building command-line interfaces")
     (description "Thor is a toolkit for building powerful command-line
