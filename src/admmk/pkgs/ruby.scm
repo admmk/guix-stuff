@@ -42,14 +42,15 @@
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
     ;; todo: fix-tests
-    ;; (arguments
-    ;;  '(#:tests? #f))
+    (arguments
+     '(;; #:tests? #f
+       #:test-target "spec"))
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
            ruby-thor))
-    (propagated-inputs
-     (list ruby-thor))
+    ;; (propagated-inputs
+    ;;  (list ruby-thor))
     (synopsis "")
     (description "")
     (home-page "")
