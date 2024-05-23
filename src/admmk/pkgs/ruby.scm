@@ -49,7 +49,7 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           ruby-thor))
+           my-ruby-thor))
     ;; (propagated-inputs
     ;;  (list ruby-thor))
     (synopsis "")
