@@ -4,7 +4,7 @@
   #:use-module (gnu packages ruby)
   #:use-module (gnu packages rails)
   #:use-module (guix download)
-  #:use-module (guix download git)
+  #:use-module (guix git-download)
   #:use-module (guix packages)
   #:use-module (guix build-system ruby))
 
