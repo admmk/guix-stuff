@@ -25,7 +25,8 @@
      (list ruby-mocha
            ruby-appraisal
            ruby-activesupport
-           ruby-actionview))
+           ruby-actionview
+           ruby-thor-0.14.6))
     (synopsis "")
     (description "")
     (home-page "")
@@ -43,7 +44,7 @@
         (base32
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
-    ;; Tests need Internet access.
+    ;; tests need Internet access.
     (arguments '(#:tests? #f))
     (native-inputs
      (list ruby-activesupport
