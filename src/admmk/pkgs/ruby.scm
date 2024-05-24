@@ -65,7 +65,7 @@
        (uri (rubygems-uri "thor" version))
        (sha256
         (base32
-         "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
+         "18qmgv38gfw9clhq6szyw5kcxkkk8xr7c0klp3pk3cyznzbapif7"))))
     ;; (source (origin
     ;;           ;; Pull from git because the gem has no tests.
     ;;           (method git-fetch)
