@@ -48,14 +48,14 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           ruby-thor@0.14.6
+           ruby-thor@0.14
            ))
     (synopsis "")
     (description "")
     (home-page "")
     (license license:expat)))
 
-(define-public ruby-thor-0.14.6
+(define-public ruby-thor-0.14
   (package
     (name "ruby-thor")
     (version "0.14.6")
