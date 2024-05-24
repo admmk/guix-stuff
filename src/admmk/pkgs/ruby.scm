@@ -79,7 +79,7 @@
     (build-system ruby-build-system)
     ;; couldn't run tests
     ;; "No Rakefile found"
-    ;; (arguments `(#:tests? #f))
+    (arguments `(#:tests? #f))
     (native-inputs (list ruby-rspec ruby-simplecov ruby-webmock))
     (synopsis "Ruby toolkit for building command-line interfaces")
     (description "Thor is a toolkit for building powerful command-line
