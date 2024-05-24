@@ -70,6 +70,8 @@
                (base32
                 "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
+    (arguments
+     `(#:test-target "test"))
     ;; (arguments
     ;;  `(#:tests? #f
     ;;    ;; #:phases
