@@ -6,7 +6,8 @@
   #:use-module (guix download)
   #:use-module (guix git-download)
   #:use-module (guix packages)
-  #:use-module (guix build-system ruby))
+  #:use-module (guix build-system ruby)
+  #:use-module (gnu packages version-control))
 
 (define-public ruby-jbuilder
   (package
@@ -58,7 +59,8 @@
      (list ruby-activesupport
            ruby-rspec
            my-ruby-thor
-           ruby-rake))
+           ruby-rake
+           git))
     ;; (propagated-inputs
     ;;  (list ruby-thor))
     (synopsis "")
