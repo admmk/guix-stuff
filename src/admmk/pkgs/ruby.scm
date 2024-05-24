@@ -54,9 +54,9 @@
     (home-page "")
     (license license:expat)))
 
-(define-public my-ruby-thor
+(define-public ruby-thor-0.14
   (package
-    (name "my-ruby-thor")
+    (name "ruby-thor")
     (version "0.14.6")
     (source (origin
               ;; Pull from git because the gem has no tests.
