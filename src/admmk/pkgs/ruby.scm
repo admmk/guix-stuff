@@ -43,9 +43,16 @@
          "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
     (build-system ruby-build-system)
     ;; todo: fix-tests
+    ;; home directody
     (arguments
      '(;; #:tests? #f
-       #:test-target "spec"))
+       #:phases (modify-phases %standard-phases
+                  (add-before 'check 'set-HOME
+                    (lambda _
+                      ;; Many tests invoke Bundler, and fails when Bundler
+                      ;; warns that /homeless-shelter does not exist.
+                      (setenv "HOME" "/tmp")
+                      #t)))))
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
