@@ -48,7 +48,8 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           my-ruby-thor))
+           ;; my-ruby-thor
+           ))
     (synopsis "")
     (description "")
     (home-page "")
