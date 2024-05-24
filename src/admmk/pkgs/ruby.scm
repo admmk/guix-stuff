@@ -59,28 +59,27 @@
   (package
     (name "ruby-thor")
     (version "0.14.6")
-    (source (origin
-              ;; Pull from git because the gem has no tests.
-              (method git-fetch)
-              (uri (git-reference
-                    (url "https://github.com/rails/thor")
-                    (commit (string-append "v" version))))
-              (file-name (git-file-name name version))
-              (sha256
-               (base32
-                "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (rubygems-uri "thor" version))
+       (sha256
+        (base32
+         "1h58xgmp0fqpnd6mvw0zl0f76119v8lnf4xabqhckbzl6jrk8qpa"))))
+    ;; (source (origin
+    ;;           ;; Pull from git because the gem has no tests.
+    ;;           (method git-fetch)
+    ;;           (uri (git-reference
+    ;;                 (url "https://github.com/rails/thor")
+    ;;                 (commit (string-append "v" version))))
+    ;;           (file-name (git-file-name name version))
+    ;;           (sha256
+    ;;            (base32
+    ;;             "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
-    (arguments
-     `(#:test-target "test"))
-    ;; (arguments
-    ;;  `(#:tests? #f
-    ;;    ;; #:phases
-    ;;    ;; (modify-phases %standard-phases
-    ;;    ;;   (replace 'check
-    ;;    ;;      (lambda* (#:key tests? #:allow-other-keys)
-    ;;    ;;        (when tests?
-    ;;    ;;          (invoke "rspec" "spec" )))))))
-    ;;    ))
+    ;; couldn't run tests
+    ;; "No Rakefile found"
+    (arguments `(#:tests? #f))
     (native-inputs (list ruby-rspec ruby-simplecov ruby-webmock))
     (synopsis "Ruby toolkit for building command-line interfaces")
     (description "Thor is a toolkit for building powerful command-line
