@@ -48,9 +48,7 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           my-ruby-thor
-           ;; ruby-rake
-           ))
+           my-ruby-thor))
     (synopsis "")
     (description "")
     (home-page "")
@@ -71,42 +69,15 @@
                (base32
                 "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
-    (arguments
-     `(#:tests? #f
-       ;; #:phases
-       ;; (modify-phases %standard-phases
-       ;;   (replace 'check
-       ;;      (lambda* (#:key tests? #:allow-other-keys)
-       ;;        (when tests?
-       ;;          (invoke "rspec" "spec" )))))))
-       ))
     ;; (arguments
-    ;;  (list
-    ;;   #:phases
-    ;;   #~(modify-phases %standard-phases
-    ;;       (add-after 'unpack 'remove-coveralls-dependency
-    ;;         (lambda _
-    ;;           ;; Do not hook the test suite into the online coveralls service.
-    ;;           (substitute* "Gemfile"
-    ;;             ((".*coveralls.*") ""))
-    ;;           (substitute* "spec/helper.rb"
-    ;;             (("require \"coveralls\"") "")
-    ;;             (("Coveralls::SimpleCov::Formatter") ""))))
-    ;;       (add-after 'unpack 'disable-problematic-tests
-    ;;         (lambda _
-    ;;           ;; These tests attempt to check the git repository for
-    ;;           ;; tabs vs spaces, double vs single quotes, etc, and
-    ;;           ;; depend on the git checkout.
-    ;;           (delete-file "spec/quality_spec.rb")
-    ;;           (substitute* "spec/parser/options_spec.rb"
-    ;;             ;; This test fails for unknown reasons (see:
-    ;;             ;; https://github.com/rails/thor/issues/814).
-    ;;             (("it \"raises an error for unknown switches" all)
-    ;;              (string-append "x" all)))))
-          ;; (replace 'check
-          ;;   (lambda* (#:key tests? #:allow-other-keys)
-          ;;     (when tests?
-          ;;       (invoke "rspec" "spec" )))))))
+    ;;  `(#:tests? #f
+    ;;    ;; #:phases
+    ;;    ;; (modify-phases %standard-phases
+    ;;    ;;   (replace 'check
+    ;;    ;;      (lambda* (#:key tests? #:allow-other-keys)
+    ;;    ;;        (when tests?
+    ;;    ;;          (invoke "rspec" "spec" )))))))
+    ;;    ))
     (native-inputs (list ruby-rspec ruby-simplecov ruby-webmock))
     (synopsis "Ruby toolkit for building command-line interfaces")
     (description "Thor is a toolkit for building powerful command-line
