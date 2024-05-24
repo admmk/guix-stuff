@@ -49,11 +49,14 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           ruby-thor-0.14.6
-           ))
-    (synopsis "")
-    (description "")
-    (home-page "")
+           ruby-thor-0.14.6))
+    (synopsis "A Ruby library for testing your library against different versions of dependencies")
+    (description "Appraisal integrates with bundler and rake to test
+your library against different versions of dependencies in repeatable
+scenarios called \"appraisals\".  Appraisal is designed to make it
+easy to check for regressions in your library without interfering
+ with day-to-day development using Bundler.")
+    (home-page "https://github.com/thoughtbot/appraisal")
     (license license:expat)))
 
 (define-public ruby-thor-0.14.6
@@ -67,16 +70,6 @@
        (sha256
         (base32
          "18qmgv38gfw9clhq6szyw5kcxkkk8xr7c0klp3pk3cyznzbapif7"))))
-    ;; (source (origin
-    ;;           ;; Pull from git because the gem has no tests.
-    ;;           (method git-fetch)
-    ;;           (uri (git-reference
-    ;;                 (url "https://github.com/rails/thor")
-    ;;                 (commit (string-append "v" version))))
-    ;;           (file-name (git-file-name name version))
-    ;;           (sha256
-    ;;            (base32
-    ;;             "0frqmnf0qkhww3pd0w7j29jzpagsg78lr553nwa9znf69c2gdsbl"))))
     (build-system ruby-build-system)
     ;; couldn't run tests
     ;; "No Rakefile found"
