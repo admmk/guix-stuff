@@ -31,30 +31,6 @@
     (home-page "")
     (license license:expat)))
 
-(define-public ruby-appraisal
-  (package
-    (name "ruby-appraisal")
-    (version "2.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (rubygems-uri "appraisal" version))
-       (sha256
-        (base32
-         "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
-    (build-system ruby-build-system)
-    ;; Tests need Internet access.
-    (arguments '(#:tests? #f))
-    (native-inputs
-     (list ruby-activesupport
-           ruby-rspec
-           ruby-thor@0.14
-           ))
-    (synopsis "")
-    (description "")
-    (home-page "")
-    (license license:expat)))
-
 (define-public ruby-thor-0.14
   (package
     (name "ruby-thor")
@@ -85,3 +61,28 @@
 interfaces.")
     (home-page "http://whatisthor.com/")
     (license license:expat)))
+
+(define-public ruby-appraisal
+  (package
+    (name "ruby-appraisal")
+    (version "2.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (rubygems-uri "appraisal" version))
+       (sha256
+        (base32
+         "1knkxrjagaqf418lkgd7xvfb5rh143d19ld8vfq16y8jpqhr561n"))))
+    (build-system ruby-build-system)
+    ;; Tests need Internet access.
+    (arguments '(#:tests? #f))
+    (native-inputs
+     (list ruby-activesupport
+           ruby-rspec
+           ruby-thor@0.14
+           ))
+    (synopsis "")
+    (description "")
+    (home-page "")
+    (license license:expat)))
+
