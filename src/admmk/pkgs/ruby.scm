@@ -46,6 +46,7 @@
     ;; home directody
     (arguments
      '(;; #:tests? #f
+       #:test-target "spec"
        #:phases (modify-phases %standard-phases
                   (add-before 'check 'set-HOME
                     (lambda _
