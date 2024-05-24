@@ -55,7 +55,7 @@
     (home-page "")
     (license license:expat)))
 
-(define-public ruby-thor-0.14
+(define-public ruby-thor-0.14.6
   (package
     (name "ruby-thor")
     (version "0.14.6")
