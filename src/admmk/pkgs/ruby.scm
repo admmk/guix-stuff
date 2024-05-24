@@ -48,7 +48,7 @@
     (native-inputs
      (list ruby-activesupport
            ruby-rspec
-           ruby-thor@0.14.6
+           ruby-thor-0.14.6
            ))
     (synopsis "")
     (description "")
